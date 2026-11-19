@@ -1,13 +1,7 @@
 body {
     margin: 20px;
     font-family: comicsans, sans-serif;
-}
-
-.avatar {
-    width: 200px;
-    height: 300px;
-    
-    
+    background-color: #e9eeea;
 }
 
 .card {
@@ -17,24 +11,83 @@ body {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    background: #266081a6;
-    color: #110c1a;
-    border: 16px solid #13702b;
+    color: #273b35;
+    border: 16px solid transparent;
     border-radius: 20px;
-    box-shadow: 0px 0px 20px #13702b;
-}
-    
-        
- 
 
-card-text {
-    margin-left: 20px auto ;
-    flex-direction: column;
-    
-}
-.linkedin-link {
-    color: #110c1a;
-    text-decoration: none;
-    text-shadow: 0px 0px 10px #13702b;
+    /* Beide Farbflächen reichen bis an die Außenkante der Karte. */
+    background:
+        linear-gradient(to right, transparent 33%, #fbf8ef 33%),
+        repeating-radial-gradient(circle at bottom left,
+            transparent 0 17px, rgb(255 255 255 / 7%) 17px 18px),
+        #204d43;
+    background-origin: border-box;
+    outline: 1px solid #b6a174;
+    outline-offset: -9px;
+    box-shadow: 0 12px 28px -12px rgb(24 50 41 / 35%);
 }
 
+.card > .avatar {
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 4px #fffdf6, 0 6px 16px rgb(14 38 31 / 28%);
+}
+
+.card-text > h1 {
+    color: #4a6458;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.08em;
+}
+
+.card-text > h2 {
+    color: #173e34;
+}
+
+.card-text > h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    background-color: #a1844c;
+}
+
+.card-text > h2,
+.card-text > p:last-child {
+    position: relative;
+}
+
+.card-text > p:nth-of-type(2) {
+    color: #54665d;
+}
+
+.card-text > p:last-child::before {
+    content: "";
+    position: absolute;
+    inset: -8px 0 auto;
+    height: 1px;
+    background-color: #d9d2c0;
+}
+
+.card-text .linkedin-link {
+    color: #1a6557;
+    text-decoration: underline;
+    text-decoration-color: #78a699;
+    text-underline-offset: 3px;
+}
+
+.card-text .linkedin-link:hover,
+.card-text .linkedin-link:focus-visible {
+    color: #103e34;
+    text-decoration-color: currentColor;
+}
+
+.card-text .linkedin-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
