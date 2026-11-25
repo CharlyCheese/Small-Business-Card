@@ -2,6 +2,11 @@ body {
     margin: 20px;
     font-family: comicsans, sans-serif;
     background-color: #e9eeea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .card {
@@ -14,6 +19,7 @@ body {
     color: #273b35;
     border: 16px solid transparent;
     border-radius: 20px;
+    
 
     /* Beide Farbflächen reichen bis an die Außenkante der Karte. */
     background:
